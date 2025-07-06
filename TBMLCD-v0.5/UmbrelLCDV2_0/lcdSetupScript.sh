@@ -12,19 +12,19 @@ echo " "
 echo "Installing packages required for the library to work..."
 echo " "
 sudo apt update
-sudo apt install build-essential python3-dev python3-smbus python3-pip python3-pil python3-numpy
-sudo apt install python3-rpi.gpio python3-spidev
+sudo apt install -y build-essential python3-dev python3-smbus python3-pip python3-pil python3-numpy
+sudo apt install -y python3-rpi.gpio python3-spidev
 
 echo " "
 echo "Installing Raspberry Pi GPIO and Adafruit GPIO libraries for Python..."
 echo " "
-sudo python3 -m pip install RPi.GPIO
-sudo python3 -m pip install Adafruit_GPIO
-sudo python3 -m pip install psutil
-sudo python3 -m pip install --upgrade certifi
-sudo pip3 install requests
-sudo pip3 install requests[socks]
-sudo pip3 install pysocks
+sudo python3 -m pip install --break-system-packages RPi.GPIO
+sudo python3 -m pip install --break-system-packages Adafruit_GPIO
+sudo python3 -m pip install --break-system-packages psutil
+sudo python3 -m pip install --break-system-packages --upgrade certifi
+sudo pip3 install --break-system-packages requests
+sudo pip3 install --break-system-packages "requests[socks]"
+sudo pip3 install --break-system-packages pysocks
 
 echo " "
 echo "Cloning and installing the LCD library..."
